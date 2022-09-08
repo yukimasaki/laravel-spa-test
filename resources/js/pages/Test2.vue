@@ -1,6 +1,7 @@
 <template>
     <v-app>
         <h1>Test2</h1>
+        <router-link to="/">top</router-link>
         <example-component></example-component>
     </v-app>
 </template>

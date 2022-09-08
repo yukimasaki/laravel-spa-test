@@ -2157,7 +2157,11 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("v-app", [_c("h1", [_vm._v("Test1")])]);
+  return _c("v-app", [_c("h1", [_vm._v("Test1")]), _vm._v(" "), _c("router-link", {
+    attrs: {
+      to: "/test2"
+    }
+  }, [_vm._v("test2")])], 1);
 };
 
 var staticRenderFns = [];
@@ -2181,7 +2185,11 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("v-app", [_c("h1", [_vm._v("Test2")]), _vm._v(" "), _c("example-component")], 1);
+  return _c("v-app", [_c("h1", [_vm._v("Test2")]), _vm._v(" "), _c("router-link", {
+    attrs: {
+      to: "/"
+    }
+  }, [_vm._v("top")]), _vm._v(" "), _c("example-component")], 1);
 };
 
 var staticRenderFns = [];
