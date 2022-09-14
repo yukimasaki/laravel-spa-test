@@ -33,14 +33,15 @@
 
 <script>
   export default {
-    name: 'App',
-    data: () => ({
-      showPassword : false,
-      loginForm: {
-        email: '',
-        password: ''
-      },
-    }),
+    data () {
+      return {
+        showPassword : false,
+        loginForm: {
+          email: '',
+          password: ''
+        },
+      }
+    },
     methods: {
       login(){
         console.log(

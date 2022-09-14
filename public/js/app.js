@@ -2443,7 +2443,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'App',
   data: function data() {
     return {
       showPassword: false,
@@ -2480,23 +2479,18 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'App',
   data: function data() {
     return {
       showPassword: false,
       registerForm: {
+        name: '',
         email: '',
-        password: ''
+        password: '',
+        password_confirmation: ''
       }
     };
   },
   methods: {
-    // register(){
-    //   console.log(
-    //     'name = ' + this.registerForm.name + '\n' +
-    //     'password = ' + this.registerForm.password
-    //   )
-    // }
     //authストア経由でAPIを呼び出す
     register: function register() {
       var _this = this;
@@ -2799,7 +2793,7 @@ var render = function render() {
     }
   }, [_c("v-card-title", [_vm._v("会員登録")]), _vm._v(" "), _c("v-card-text", [_c("v-form", [_c("v-text-field", {
     attrs: {
-      label: "Email",
+      label: "Name",
       "prepend-icon": "mdi-account-circle"
     },
     model: {
@@ -2808,6 +2802,18 @@ var render = function render() {
         _vm.$set(_vm.registerForm, "name", $$v);
       },
       expression: "registerForm.name"
+    }
+  }), _vm._v(" "), _c("v-text-field", {
+    attrs: {
+      label: "Email",
+      "prepend-icon": "mdi-email"
+    },
+    model: {
+      value: _vm.registerForm.email,
+      callback: function callback($$v) {
+        _vm.$set(_vm.registerForm, "email", $$v);
+      },
+      expression: "registerForm.email"
     }
   }), _vm._v(" "), _c("v-text-field", {
     attrs: {
@@ -2827,6 +2833,25 @@ var render = function render() {
         _vm.$set(_vm.registerForm, "password", $$v);
       },
       expression: "registerForm.password"
+    }
+  }), _vm._v(" "), _c("v-text-field", {
+    attrs: {
+      type: _vm.showPassword ? "text" : "password",
+      label: "Password (Confirm)",
+      "prepend-icon": "mdi-lock",
+      "append-icon": _vm.showPassword ? "mdi-eye" : "mdi-eye-off"
+    },
+    on: {
+      "click:append": function clickAppend($event) {
+        _vm.showPassword = !_vm.showPassword;
+      }
+    },
+    model: {
+      value: _vm.registerForm.password_confirmation,
+      callback: function callback($$v) {
+        _vm.$set(_vm.registerForm, "password_confirmation", $$v);
+      },
+      expression: "registerForm.password_confirmation"
     }
   })], 1)], 1), _vm._v(" "), _c("v-card-actions", [_c("v-btn", {
     staticClass: "info",

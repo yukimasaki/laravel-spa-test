@@ -48,8 +48,8 @@
 
 <script>
   export default {
-    data(){
-      return{
+    data () {
+      return {
         drawer: null,
         nav_lists:[
           {name: 'Getting Started',icon: 'mdi-vuetify'},

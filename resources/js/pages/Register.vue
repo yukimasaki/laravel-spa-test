@@ -5,9 +5,14 @@
     <v-card-text>
       <v-form>
         <v-text-field
-          label="Email"
+          label="Name"
           prepend-icon="mdi-account-circle"
           v-model="registerForm.name"
+        />
+        <v-text-field
+          label="Email"
+          prepend-icon="mdi-email"
+          v-model="registerForm.email"
         />
         <v-text-field
           v-bind:type="showPassword ? 'text' : 'password'"
@@ -16,6 +21,14 @@
           prepend-icon="mdi-lock"
           v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           v-model="registerForm.password"
+        />
+        <v-text-field
+          v-bind:type="showPassword ? 'text' : 'password'"
+          @click:append="showPassword = !showPassword"
+          label="Password (Confirm)"
+          prepend-icon="mdi-lock"
+          v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          v-model="registerForm.password_confirmation"
         />
       </v-form>
     </v-card-text>
@@ -32,22 +45,18 @@
 
 <script>
   export default {
-    name: 'App',
-    data: () => ({
-      showPassword : false,
-      registerForm: {
-        email: '',
-        password: ''
-      },
-    }),
+    data () {
+      return {
+        showPassword : false,
+        registerForm: {
+          name: '',
+          email: '',
+          password: '',
+          password_confirmation: ''
+        }
+      }
+    },
     methods: {
-      // register(){
-      //   console.log(
-      //     'name = ' + this.registerForm.name + '\n' +
-      //     'password = ' + this.registerForm.password
-      //   )
-      // }
-
       //authストア経由でAPIを呼び出す
       async register () {
         // authストアのresigterアクションを呼び出す
@@ -56,7 +65,6 @@
         // トップページに移動する
         this.$router.push('/')
       }
-
     }
-  };
+  }
 </script>
