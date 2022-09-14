@@ -1,6 +1,6 @@
 <template>
   <v-card width="400px" class="mx-auto mt-5">
-    <v-card-title>Login</v-card-title>
+    <v-card-title>ログイン</v-card-title>
 
     <v-card-text>
       <v-form>
@@ -25,7 +25,7 @@
       <v-btn
         class="info"
         @click="login"
-      >Login</v-btn>
+      >ログイン</v-btn>
     </v-card-actions>
 
   </v-card>

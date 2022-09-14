@@ -2312,7 +2312,7 @@ var render = function render() {
     attrs: {
       width: "400px"
     }
-  }, [_c("v-card-title", [_vm._v("Login")]), _vm._v(" "), _c("v-card-text", [_c("v-form", [_c("v-text-field", {
+  }, [_c("v-card-title", [_vm._v("ログイン")]), _vm._v(" "), _c("v-card-text", [_c("v-form", [_c("v-text-field", {
     attrs: {
       label: "Email",
       "prepend-icon": "mdi-account-circle"
@@ -2352,7 +2352,7 @@ var render = function render() {
     on: {
       click: _vm.login
     }
-  }, [_vm._v("Login")])], 1)], 1);
+  }, [_vm._v("ログイン")])], 1)], 1);
 };
 
 var staticRenderFns = [];
@@ -2381,7 +2381,7 @@ var render = function render() {
     attrs: {
       width: "400px"
     }
-  }, [_c("v-card-title", [_vm._v("Register")]), _vm._v(" "), _c("v-card-text", [_c("v-form", [_c("v-text-field", {
+  }, [_c("v-card-title", [_vm._v("会員登録")]), _vm._v(" "), _c("v-card-text", [_c("v-form", [_c("v-text-field", {
     attrs: {
       label: "Email",
       "prepend-icon": "mdi-account-circle"
@@ -2417,7 +2417,7 @@ var render = function render() {
     on: {
       click: _vm.register
     }
-  }, [_vm._v("Register")])], 1)], 1);
+  }, [_vm._v("登録")])], 1)], 1);
 };
 
 var staticRenderFns = [];

@@ -1,6 +1,6 @@
 <template>
   <v-card width="400px" class="mx-auto mt-5">
-    <v-card-title>Register</v-card-title>
+    <v-card-title>会員登録</v-card-title>
 
     <v-card-text>
       <v-form>
@@ -24,7 +24,7 @@
       <v-btn
         class="info"
         @click="register"
-      >Register</v-btn>
+      >登録</v-btn>
     </v-card-actions>
 
   </v-card>
