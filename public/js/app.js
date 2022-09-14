@@ -2149,7 +2149,16 @@ var render = function render() {
         _vm.drawer = !_vm.drawer;
       }
     }
-  }), _vm._v(" "), _c("v-toolbar-title", [_vm._v("Vue Dashboad")]), _vm._v(" "), _c("v-spacer"), _vm._v(" "), _c("v-toolbar-items", [_c("v-btn", {
+  }), _vm._v(" "), _c("v-toolbar-title", {
+    staticStyle: {
+      cursor: "pointer"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.$router.push("/");
+      }
+    }
+  }, [_vm._v("Vue Dashboad")]), _vm._v(" "), _c("v-spacer"), _vm._v(" "), _c("v-toolbar-items", [_c("v-btn", {
     attrs: {
       text: "",
       to: "/login"
