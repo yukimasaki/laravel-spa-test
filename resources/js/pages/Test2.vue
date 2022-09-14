@@ -1,9 +1,9 @@
 <template>
-    <v-app>
+    <div>
         <h1>Test2</h1>
         <router-link to="/">top</router-link>
         <example-component></example-component>
-    </v-app>
+    </div>
 </template>
 
 <script>
