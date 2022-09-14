@@ -7,7 +7,7 @@
         <v-text-field
           label="Email"
           prepend-icon="mdi-account-circle"
-          v-model="name"
+          v-model="loginForm.name"
         />
         <v-text-field
           v-bind:type="showPassword ? 'text' : 'password'"
@@ -15,7 +15,7 @@
           label="Password"
           prepend-icon="mdi-lock"
           v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-          v-model="password"
+          v-model="loginForm.password"
         />
       </v-form>
     </v-card-text>
@@ -23,7 +23,7 @@
     <v-card-actions>
       <v-btn
         class="info"
-        @click="submit"
+        @click="login"
       >Login</v-btn>
     </v-card-actions>
 
@@ -35,14 +35,16 @@
     name: 'App',
     data: () => ({
       showPassword : false,
-      name:'',
-      password:'',
+      loginForm: {
+        email: '',
+        password: ''
+      },
     }),
     methods: {
-      submit(){
+      login(){
         console.log(
-          'name = ' + this.name + '\n' +
-          'password = ' + this.password
+          'name = ' + this.loginForm.name + '\n' +
+          'password = ' + this.loginForm.password
         )
       }
     }

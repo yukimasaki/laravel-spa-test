@@ -2066,13 +2066,15 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       showPassword: false,
-      name: '',
-      password: ''
+      loginForm: {
+        email: '',
+        password: ''
+      }
     };
   },
   methods: {
-    submit: function submit() {
-      console.log('name = ' + this.name + '\n' + 'password = ' + this.password);
+    login: function login() {
+      console.log('name = ' + this.loginForm.name + '\n' + 'password = ' + this.loginForm.password);
     }
   }
 });
@@ -2287,11 +2289,11 @@ var render = function render() {
       "prepend-icon": "mdi-account-circle"
     },
     model: {
-      value: _vm.name,
+      value: _vm.loginForm.name,
       callback: function callback($$v) {
-        _vm.name = $$v;
+        _vm.$set(_vm.loginForm, "name", $$v);
       },
-      expression: "name"
+      expression: "loginForm.name"
     }
   }), _vm._v(" "), _c("v-text-field", {
     attrs: {
@@ -2306,16 +2308,16 @@ var render = function render() {
       }
     },
     model: {
-      value: _vm.password,
+      value: _vm.loginForm.password,
       callback: function callback($$v) {
-        _vm.password = $$v;
+        _vm.$set(_vm.loginForm, "password", $$v);
       },
-      expression: "password"
+      expression: "loginForm.password"
     }
   })], 1)], 1), _vm._v(" "), _c("v-card-actions", [_c("v-btn", {
     staticClass: "info",
     on: {
-      click: _vm.submit
+      click: _vm.login
     }
   }, [_vm._v("Login")])], 1)], 1);
 };
