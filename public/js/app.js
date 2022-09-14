@@ -2194,7 +2194,7 @@ var render = function render() {
       text: "",
       to: "/login"
     }
-  }, [_vm._v("Login")])], 1)], 1), _vm._v(" "), _c("v-main", [_c("router-view")], 1), _vm._v(" "), _c("v-footer", {
+  }, [_vm._v("ログイン")])], 1)], 1), _vm._v(" "), _c("v-main", [_c("router-view")], 1), _vm._v(" "), _c("v-footer", {
     attrs: {
       color: "primary",
       dark: "",
