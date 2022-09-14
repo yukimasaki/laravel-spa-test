@@ -2343,7 +2343,11 @@ var render = function render() {
       },
       expression: "loginForm.password"
     }
-  })], 1)], 1), _vm._v(" "), _c("v-card-actions", [_c("v-btn", {
+  })], 1), _vm._v(" "), _c("div", [_vm._v("会員登録は"), _c("router-link", {
+    attrs: {
+      to: "/register"
+    }
+  }, [_vm._v("コチラ")])], 1)], 1), _vm._v(" "), _c("v-card-actions", [_c("v-btn", {
     staticClass: "info",
     on: {
       click: _vm.login

@@ -18,6 +18,7 @@
           v-model="loginForm.password"
         />
       </v-form>
+      <div>会員登録は<router-link to="/register">コチラ</router-link></div>
     </v-card-text>
 
     <v-card-actions>
