@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <!--サイドバー-->
     <v-navigation-drawer app v-model="drawer" clipped >
       <v-container>
         <v-list-item>
@@ -22,20 +23,23 @@
         </v-list>
       </v-container>
     </v-navigation-drawer>
-    <header>
-      <v-app-bar color="primary" dark app clipped-left>
-        <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title>Vue Dashboad</v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-toolbar-items>
-          <v-btn text>Login</v-btn>
-        </v-toolbar-items>
-      </v-app-bar>
-    </header>
+
+    <!-- ヘッダー -->
+    <v-app-bar color="primary" dark app clipped-left>
+      <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>Vue Dashboad</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn text to="/login">Login</v-btn>
+      </v-toolbar-items>
+    </v-app-bar>
+
+    <!-- コンテンツ -->
     <v-main><router-view></router-view></v-main>
-    <v-footer color="primary" dark app>
-      ©2022 Yuki Masaki
-    </v-footer>
+
+    <!-- フッター -->
+    <v-footer color="primary" dark app>©2022 Yuki Masaki</v-footer>
+
   </v-app>
 </template>
 
