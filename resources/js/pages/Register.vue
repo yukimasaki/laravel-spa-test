@@ -23,8 +23,8 @@
     <v-card-actions>
       <v-btn
         class="info"
-        @click="login"
-      >Login</v-btn>
+        @click="register"
+      >Register</v-btn>
     </v-card-actions>
 
   </v-card>
@@ -41,7 +41,7 @@
       },
     }),
     methods: {
-      login(){
+      register(){
         console.log(
           'name = ' + this.registerForm.name + '\n' +
           'password = ' + this.registerForm.password

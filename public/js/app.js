@@ -2102,7 +2102,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    login: function login() {
+    register: function register() {
       console.log('name = ' + this.registerForm.name + '\n' + 'password = ' + this.registerForm.password);
     }
   }
@@ -2415,9 +2415,9 @@ var render = function render() {
   })], 1)], 1), _vm._v(" "), _c("v-card-actions", [_c("v-btn", {
     staticClass: "info",
     on: {
-      click: _vm.login
+      click: _vm.register
     }
-  }, [_vm._v("Login")])], 1)], 1);
+  }, [_vm._v("Register")])], 1)], 1);
 };
 
 var staticRenderFns = [];
