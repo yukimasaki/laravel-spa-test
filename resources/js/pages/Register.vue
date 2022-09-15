@@ -61,7 +61,7 @@
       //authストア経由でAPIを呼び出す
       async register() {
         // authストアのresigterアクションを呼び出す
-        await this.$store.dispatch('auth/register', 'this.registerForm')
+        await this.$store.dispatch('auth/register', this.registerForm)
 
         // トップページに移動する
         this.$router.push('/')

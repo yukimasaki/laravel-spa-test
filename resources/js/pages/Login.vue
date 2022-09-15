@@ -7,7 +7,7 @@
         <v-text-field
           label="Email"
           prepend-icon="mdi-account-circle"
-          v-model="loginForm.name"
+          v-model="loginForm.email"
         />
         <v-text-field
           v-bind:type="showPassword ? 'text' : 'password'"
@@ -43,11 +43,17 @@
       }
     },
     methods: {
-      login(){
-        console.log(
-          'name = ' + this.loginForm.name + '\n' +
-          'password = ' + this.loginForm.password
-        )
+      async login() {
+        // authストアのloginアクションを呼び出す
+        await this.$store.dispatch('auth/login', this.loginForm)
+
+        // トップページに移動する
+        this.$router.push('/')
+
+        // console.log(
+        //   'name = ' + this.loginForm.name + '\n' +
+        //   'password = ' + this.loginForm.password
+        // )
       }
     }
   };
