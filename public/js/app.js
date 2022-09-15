@@ -66696,6 +66696,29 @@ var actions = {
         }
       }, _callee2);
     }))();
+  },
+  //ログアウト
+  logout: function logout(context) {
+    return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+      var response;
+      return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return axios.post('/api/logout');
+
+            case 2:
+              response = _context3.sent;
+              context.commit('setUser', null);
+
+            case 4:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }))();
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = ({
