@@ -30,6 +30,13 @@ const actions = {
   async logout (context) {
     const response = await axios.post('/api/logout')
     context.commit('setUser', null)
+  },
+
+  //ログインユーザー
+  async currentUser (context) {
+    const response = await axios.get('/api/user')
+    const user = response.data || null
+    context.commit('setUser', user)
   }
 
 }
