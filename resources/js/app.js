@@ -5,7 +5,10 @@ import router from './router'
 import store from './store'
 import App from './App.vue'
 
-const app = new Vue({
+const createApp = async () => {
+  await store.dispatch('auth/currentUser')
+
+  new Vue({
     el: '#app',
     vuetify: Vuetify,
     router,
@@ -14,4 +17,7 @@ const app = new Vue({
         App,
     },
     template: '<App />'
-});
+  })
+}
+
+createApp()
