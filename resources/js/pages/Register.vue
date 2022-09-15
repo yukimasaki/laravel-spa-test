@@ -23,11 +23,11 @@
           v-model="registerForm.password"
         />
         <v-text-field
-          v-bind:type="showPassword ? 'text' : 'password'"
-          @click:append="showPassword = !showPassword"
+          v-bind:type="showPasswordConfirm ? 'text' : 'password'"
+          @click:append="showPasswordConfirm = !showPasswordConfirm"
           label="Password (Confirm)"
           prepend-icon="mdi-lock"
-          v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          v-bind:append-icon="showPasswordConfirm ? 'mdi-eye' : 'mdi-eye-off'"
           v-model="registerForm.password_confirmation"
         />
       </v-form>
@@ -48,6 +48,7 @@
     data () {
       return {
         showPassword : false,
+        showPasswordConfirm: false,
         registerForm: {
           name: '',
           email: '',

@@ -2101,6 +2101,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       showPassword: false,
+      showPasswordConfirm: false,
       registerForm: {
         name: '',
         email: '',
@@ -2455,14 +2456,14 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("v-text-field", {
     attrs: {
-      type: _vm.showPassword ? "text" : "password",
+      type: _vm.showPasswordConfirm ? "text" : "password",
       label: "Password (Confirm)",
       "prepend-icon": "mdi-lock",
-      "append-icon": _vm.showPassword ? "mdi-eye" : "mdi-eye-off"
+      "append-icon": _vm.showPasswordConfirm ? "mdi-eye" : "mdi-eye-off"
     },
     on: {
       "click:append": function clickAppend($event) {
-        _vm.showPassword = !_vm.showPassword;
+        _vm.showPasswordConfirm = !_vm.showPasswordConfirm;
       }
     },
     model: {
