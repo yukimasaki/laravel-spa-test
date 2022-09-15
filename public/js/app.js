@@ -2133,11 +2133,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 // トップページに移動する
-                _this.$router.push('/'); // console.log(
-                //   'name = ' + this.loginForm.name + '\n' +
-                //   'password = ' + this.loginForm.password
-                // )
-
+                if (_this.apiStatus) {
+                  // トップページに移動する
+                  _this.$router.push('/');
+                }
 
               case 3:
               case "end":
@@ -2146,6 +2145,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    }
+  },
+  computed: {
+    apiStatus: function apiStatus() {
+      return this.$store.state.auth.apiStatus;
     }
   }
 });
