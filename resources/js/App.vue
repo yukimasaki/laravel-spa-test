@@ -33,8 +33,24 @@
       >Vue Dashboad</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn text @click="logout">ログアウト</v-btn>
-        <v-btn text to="/login">ログイン</v-btn>
+        <template v-if="isLogin">
+          <v-menu offset-y open-on-hover>
+            <template v-slot:activator="{on}">
+              <v-btn v-on="on" style="text-transform:none" text>{{ username }}</v-btn>
+            </template>
+            <v-list>
+              <!-- ログアウト -->
+              <v-list-item link>
+                <v-list-item-content>
+                  <v-list-item-title @click="logout">ログアウト</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </template>
+        <template v-else>
+          <v-btn text to="/login">ログイン</v-btn>
+        </template>
       </v-toolbar-items>
     </v-app-bar>
 
@@ -66,6 +82,14 @@
       async logout () {
         await this.$store.dispatch('auth/logout')
         this.$router.push('/login')
+      }
+    },
+    computed: {
+      isLogin () {
+        return this.$store.getters['auth/check']
+      },
+      username () {
+        return this.$store.getters['auth/username']
       }
     }
   }

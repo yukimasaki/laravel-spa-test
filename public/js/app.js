@@ -2049,6 +2049,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     }
+  },
+  computed: {
+    isLogin: function isLogin() {
+      return this.$store.getters['auth/check'];
+    },
+    username: function username() {
+      return this.$store.getters['auth/username'];
+    }
   }
 });
 
@@ -2283,19 +2291,39 @@ var render = function render() {
         return _vm.$router.push("/");
       }
     }
-  }, [_vm._v("Vue Dashboad")]), _vm._v(" "), _c("v-spacer"), _vm._v(" "), _c("v-toolbar-items", [_c("v-btn", {
+  }, [_vm._v("Vue Dashboad")]), _vm._v(" "), _c("v-spacer"), _vm._v(" "), _c("v-toolbar-items", [_vm.isLogin ? [_c("v-menu", {
     attrs: {
-      text: ""
+      "offset-y": "",
+      "open-on-hover": ""
     },
+    scopedSlots: _vm._u([{
+      key: "activator",
+      fn: function fn(_ref) {
+        var on = _ref.on;
+        return [_c("v-btn", _vm._g({
+          staticStyle: {
+            "text-transform": "none"
+          },
+          attrs: {
+            text: ""
+          }
+        }, on), [_vm._v(_vm._s(_vm.username))])];
+      }
+    }], null, false, 3209418414)
+  }, [_vm._v(" "), _c("v-list", [_c("v-list-item", {
+    attrs: {
+      link: ""
+    }
+  }, [_c("v-list-item-content", [_c("v-list-item-title", {
     on: {
       click: _vm.logout
     }
-  }, [_vm._v("ログアウト")]), _vm._v(" "), _c("v-btn", {
+  }, [_vm._v("ログアウト")])], 1)], 1)], 1)], 1)] : [_c("v-btn", {
     attrs: {
       text: "",
       to: "/login"
     }
-  }, [_vm._v("ログイン")])], 1)], 1), _vm._v(" "), _c("v-main", [_c("router-view")], 1), _vm._v(" "), _c("v-footer", {
+  }, [_vm._v("ログイン")])]], 2)], 1), _vm._v(" "), _c("v-main", [_c("router-view")], 1), _vm._v(" "), _c("v-footer", {
     attrs: {
       color: "primary",
       dark: "",
