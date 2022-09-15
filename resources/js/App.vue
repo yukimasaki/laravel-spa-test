@@ -33,6 +33,7 @@
       >Vue Dashboad</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
+        <v-btn text @click="logout">ログアウト</v-btn>
         <v-btn text to="/login">ログイン</v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -59,6 +60,12 @@
           {name: 'Directives',icon: 'mdi-function'},
           {name: 'Preminum themes',icon: 'mdi-vuetify'},
         ],
+      }
+    },
+    methods: {
+      async logout () {
+        await this.$store.dispatch('auth/logout')
+        this.$router.push('/login')
       }
     }
   }
