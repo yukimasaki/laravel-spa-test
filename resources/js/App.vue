@@ -65,6 +65,7 @@
 
 <script>
   import { INTERNAL_SERVER_ERROR } from './util'
+  import { mapState, mapGetters } from 'vuex'
 
   export default {
     data () {
@@ -82,20 +83,24 @@
     },
     methods: {
       async logout () {
+        // authストアのlogoutアクションを呼び出す
         await this.$store.dispatch('auth/logout')
-        this.$router.push('/login')
+
+        if (this.apiStatus) {
+          // トップページに移動する
+          this.$router.push('/login')
+        }
       }
     },
     computed: {
-      isLogin () {
-        return this.$store.getters['auth/check']
-      },
-      username () {
-        return this.$store.getters['auth/username']
-      },
-      errorCode () {
-        return this.$store.state.error.code
-      }
+      ... mapState({
+        apiStatus: state => state.auth.apiStatus,
+        errorCode: state => state.error.code
+      }),
+      ... mapGetters({
+        isLogin: 'auth/check',
+        username: 'auth/username'
+      })
     },
     watch: {
       errorCode: {

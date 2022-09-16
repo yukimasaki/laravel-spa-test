@@ -89,10 +89,12 @@
         this.$store.commit('auth/setRegisterErrorMessages', null)
       }
     },
-    computed: mapState({
-      apiStatus: state => state.auth.apiStatus,
-      registerErrors: state => state.auth.registerErrorMessages
-    }),
+    computed: {
+        ... mapState({
+          apiStatus: state => state.auth.apiStatus,
+          registerErrors: state => state.auth.registerErrorMessages
+        })
+    },
     created () {
       this.clearError()
     }

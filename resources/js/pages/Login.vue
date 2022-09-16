@@ -73,10 +73,12 @@
         this.$store.commit('auth/setLoginErrorMessages', null)
       }
     },
-    computed: mapState({
+    computed: {
+    ... mapState({
       apiStatus: state => state.auth.apiStatus,
       loginErrors: state => state.auth.loginErrorMessages,
-    }),
+      })
+    },
     created () {
       this.clearError()
     }
