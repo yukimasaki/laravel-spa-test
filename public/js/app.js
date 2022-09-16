@@ -2140,6 +2140,26 @@ __webpack_require__.r(__webpack_exports__);
         text: 'プロダクトキー',
         align: 'center',
         value: 'product_key'
+      }, {
+        text: '有効期限',
+        align: 'center',
+        value: 'expire_date'
+      }, {
+        text: '顧客名',
+        align: 'center',
+        value: 'customer_id'
+      }, {
+        text: '割当先',
+        align: 'center',
+        value: 'assigned_to'
+      }, {
+        text: '通知',
+        align: 'center',
+        value: 'is_notify'
+      }, {
+        text: '作成日',
+        align: 'center',
+        value: 'created_at'
       }]
     };
   },
