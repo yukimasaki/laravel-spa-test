@@ -60,7 +60,7 @@
       }
     },
     methods: {
-      async login() {
+      async login () {
         // authストアのloginアクションを呼び出す
         await this.$store.dispatch('auth/login', this.loginForm)
 
@@ -69,6 +69,9 @@
           // トップページに移動する
           this.$router.push('/')
         }
+      },
+      clearError () {
+        this.$store.commit('auth/setLoginErrorMessages', null)
       }
     },
     computed: {
@@ -77,5 +80,8 @@
         loginErrors: state => state.auth.loginErrorMessages
       })
     },
+    created () {
+      this.clearError()
+    }
   };
 </script>

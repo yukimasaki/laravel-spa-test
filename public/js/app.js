@@ -2171,6 +2171,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    clearError: function clearError() {
+      this.$store.commit('auth/setLoginErrorMessages', null);
     }
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
@@ -2180,7 +2183,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     loginErrors: function loginErrors(state) {
       return state.auth.loginErrorMessages;
     }
-  }))
+  })),
+  created: function created() {
+    this.clearError();
+  }
 });
 
 /***/ }),
