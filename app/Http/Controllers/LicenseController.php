@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\License;
 
 class LicenseController extends Controller
 {
@@ -57,7 +58,7 @@ class LicenseController extends Controller
           'is_notify' => $request->is_notify,
           'assigned_to' => $request->assigned_to,
           'customer_id' => $request->customer_id,
-        ])
+        ]);
     }
 
     /**

@@ -2,15 +2,12 @@
   <v-data-table
     :headers="headers"
     :items="licenseList"
-    :search="search"
   >
 
   </v-data-table>
 </template>
 
 <script>
-import Axios from 'axios';
-
   export default {
     data () {
       return {
@@ -19,7 +16,7 @@ import Axios from 'axios';
           {text: 'ID', align: 'center', value: 'id'},
           {text: '製品名', align: 'center', value: 'product_name'},
           {text: 'プロダクトキー', align: 'center', value: 'product_key'},
-        ]
+        ],
       }
     },
     methods: {
@@ -28,12 +25,15 @@ import Axios from 'axios';
         this.licenseList = [];
         axios.get('/api/licenses')
         .then( response =>{
-          this.licenseList =response.data;
+          this.licenseList = response.data;
         })
         .catch (error => {
           console.log("Error : " + response);
         });
       }
+    },
+    mounted() {
+      this.indexLicense();
     }
   }
 </script>

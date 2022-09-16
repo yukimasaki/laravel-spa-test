@@ -2124,9 +2124,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2158,6 +2155,9 @@ __webpack_require__.r(__webpack_exports__);
         console.log("Error : " + response);
       });
     }
+  },
+  mounted: function mounted() {
+    this.indexLicense();
   }
 });
 
@@ -2557,8 +2557,7 @@ var render = function render() {
   return _c("v-data-table", {
     attrs: {
       headers: _vm.headers,
-      items: _vm.licenseList,
-      search: _vm.search
+      items: _vm.licenseList
     }
   });
 };
