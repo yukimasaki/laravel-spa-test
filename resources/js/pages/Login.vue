@@ -4,6 +4,18 @@
 
     <v-card-text>
       <v-form>
+
+        <!-- バリデーションエラーメッセージ -->
+        <v-alert v-if="loginErrors" color="red" type="error" dense>
+          <ul v-if="loginErrors.email">
+            <li v-for="msg in loginErrors.email" :key="msg">{{ msg }}</li>
+          </ul>
+          <ul v-if="loginErrors.password">
+            <li v-for="msg in loginErrors.password" :key="msg">{{ msg }}</li>
+          </ul>
+        </v-alert>
+
+        <!-- 入力欄 -->
         <v-text-field
           label="Email"
           prepend-icon="mdi-account-circle"
@@ -17,8 +29,11 @@
           v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           v-model="loginForm.password"
         />
+
       </v-form>
+
       <div>会員登録は<router-link to="/register">コチラ</router-link></div>
+
     </v-card-text>
 
     <v-card-actions>
@@ -32,6 +47,8 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
     data () {
       return {
@@ -55,9 +72,10 @@
       }
     },
     computed: {
-      apiStatus () {
-        return this.$store.state.auth.apiStatus
-      }
+      ...mapState({
+        apiStatus: state => state.auth.apiStatus,
+        loginErrors: state => state.auth.loginErrorMessages
+      })
     },
   };
 </script>
