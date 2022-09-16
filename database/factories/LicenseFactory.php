@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(License::class, function (Faker $faker) {
     return [
-        'product_name' => $faker->words,
-        'product_key' => $faker->randomKey->toUpper,
+        'product_name' => $faker->city,
+        'product_key' => $faker->isbn10
     ];
 });
