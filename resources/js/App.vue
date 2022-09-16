@@ -72,12 +72,9 @@
       return {
         drawer: null,
         nav_lists:[
-          {name: 'Getting Started',icon: 'mdi-vuetify'},
-          {name: 'Customization',icon: 'mdi-cogs'},
-          {name: 'Styles & animations',icon: 'mdi-palette'},
-          {name: 'UI Components',icon: 'mdi-view-dashboard'},
-          {name: 'Directives',icon: 'mdi-function'},
-          {name: 'Preminum themes',icon: 'mdi-vuetify'},
+          {name: 'ライセンス',icon: 'mdi-script-text-key'},
+          {name: 'ドメイン',icon: 'mdi-domain'},
+          {name: '顧客',icon: 'mdi-account-group'},
         ],
       }
     },
