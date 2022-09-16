@@ -17,10 +17,10 @@ class CreateLicensesTable extends Migration
             $table->id();
             $table->string('product_key');
             $table->string('product_name');
-            $table->date('expire_date');
-            $table->boolean('is_notify');
-            $table->string('assigned_to');
-            $table->unsignedBigInteger('customer_id');
+            $table->date('expire_date')->default('1980-01-01');
+            $table->boolean('is_notify')->default(false);
+            $table->string('assigned_to')->nullable();
+            $table->unsignedBigInteger('customer_id')->nullable();
             $table->timestamps();
         });
     }

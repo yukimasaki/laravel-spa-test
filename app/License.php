@@ -14,5 +14,5 @@ class License extends Model
       'is_notify',
       'assigned_to',
       'customer_id'
-    ]
+    ];
 }
