@@ -64,7 +64,6 @@
         // authストアのloginアクションを呼び出す
         await this.$store.dispatch('auth/login', this.loginForm)
 
-        // トップページに移動する
         if (this.apiStatus) {
           // トップページに移動する
           this.$router.push('/')
@@ -74,12 +73,10 @@
         this.$store.commit('auth/setLoginErrorMessages', null)
       }
     },
-    computed: {
-      ...mapState({
-        apiStatus: state => state.auth.apiStatus,
-        loginErrors: state => state.auth.loginErrorMessages
-      })
-    },
+    computed: mapState({
+      apiStatus: state => state.auth.apiStatus,
+      loginErrors: state => state.auth.loginErrorMessages,
+    }),
     created () {
       this.clearError()
     }

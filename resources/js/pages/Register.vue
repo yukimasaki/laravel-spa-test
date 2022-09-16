@@ -4,6 +4,21 @@
 
     <v-card-text>
       <v-form>
+
+        <!-- バリデーションエラーメッセージ -->
+        <v-alert v-if="registerErrors" color="red" type="error" dense>
+          <ul v-if="registerErrors.name">
+            <li v-for="msg in registerErrors.name" :key="msg">{{ msg }}</li>
+          </ul>
+          <ul v-if="registerErrors.email">
+            <li v-for="msg in registerErrors.email" :key="msg">{{ msg }}</li>
+          </ul>
+          <ul v-if="registerErrors.password">
+            <li v-for="msg in registerErrors.password" :key="msg">{{ msg }}</li>
+          </ul>
+        </v-alert>
+
+        <!-- 入力欄 -->
         <v-text-field
           label="Name"
           prepend-icon="mdi-account-circle"
@@ -44,6 +59,8 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
     data () {
       return {
@@ -63,9 +80,21 @@
         // authストアのresigterアクションを呼び出す
         await this.$store.dispatch('auth/register', this.registerForm)
 
-        // トップページに移動する
-        this.$router.push('/')
+        if (this.apiStatus) {
+          // トップページに移動する
+          this.$router.push('/')
+        }
+      },
+      clearError () {
+        this.$store.commit('auth/setRegisterErrorMessages', null)
       }
+    },
+    computed: mapState({
+      apiStatus: state => state.auth.apiStatus,
+      registerErrors: state => state.auth.registerErrorMessages
+    }),
+    created () {
+      this.clearError()
     }
   }
 </script>
