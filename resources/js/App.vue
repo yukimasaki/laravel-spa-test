@@ -12,7 +12,7 @@
         </v-list-item>
         <v-divider></v-divider>
         <v-list dense nav>
-          <v-list-item v-for="nav_list in nav_lists" :key="nav_list.name">
+          <v-list-item v-for="nav_list in nav_lists" :key="nav_list.name" :to="nav_list.link">
             <v-list-item-icon>
               <v-icon>{{ nav_list.icon }}</v-icon>
             </v-list-item-icon>
@@ -72,9 +72,9 @@
       return {
         drawer: null,
         nav_lists:[
-          {name: 'ライセンス',icon: 'mdi-script-text-key'},
-          {name: 'ドメイン',icon: 'mdi-domain'},
-          {name: '顧客',icon: 'mdi-account-group'},
+          {name: 'ライセンス', icon: 'mdi-script-text-key', link: '/licenses'},
+          {name: 'ドメイン', icon: 'mdi-domain', link: '/domains'},
+          {name: '顧客', icon: 'mdi-account-group', link: '/customers'},
         ],
       }
     },

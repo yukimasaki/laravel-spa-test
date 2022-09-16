@@ -5,6 +5,7 @@ import store from './store'
 import Login from './pages/Login.vue'
 import Register from './pages/Register.vue'
 import SystemError from './pages/errors/System.vue'
+import LicenseList from './pages/LicenseList.vue'
 
 //test
 import Test1 from './pages/Test1.vue'
@@ -39,6 +40,10 @@ const routes = [
   {
     path: '/500',
     component: SystemError
+  },
+  {
+    path: '/licenses',
+    component: LicenseList
   }
 ]
 
