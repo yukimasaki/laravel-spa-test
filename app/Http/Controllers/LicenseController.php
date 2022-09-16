@@ -13,7 +13,8 @@ class LicenseController extends Controller
      */
     public function index()
     {
-        //
+        //一覧表示
+        return License::all();
     }
 
     /**
@@ -24,7 +25,8 @@ class LicenseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //作成
+        License::create($request->all());
     }
 
     /**
@@ -47,7 +49,15 @@ class LicenseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //更新
+        License::where('id', $id)->update([
+          'product_key' => $request->product_key,
+          'product_name' => $request->product_name,
+          'expire_date' => $request->expire_date,
+          'is_notify' => $request->is_notify,
+          'assigned_to' => $request->assigned_to,
+          'customer_id' => $request->customer_id,
+        ])
     }
 
     /**
@@ -58,6 +68,7 @@ class LicenseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //削除
+        License::where('id', $id)->delete();
     }
 }
