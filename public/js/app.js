@@ -66860,7 +66860,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var state = {
   user: null,
-  apiStatus: null
+  apiStatus: null,
+  loginErrorMessages: null
 };
 var getters = {
   check: function check(state) {
@@ -66876,6 +66877,9 @@ var mutations = {
   },
   setApiStatus: function setApiStatus(state, status) {
     state.apiStatus = status;
+  },
+  setLoginErrorMessages: function setLoginErrorMessages(state, messages) {
+    state.loginErrorMessages = messages;
   }
 };
 var actions = {
@@ -66930,9 +66934,14 @@ var actions = {
 
             case 8:
               context.commit('setApiStatus', false);
-              context.commit('error/setCode', response.status, {
-                root: true
-              });
+
+              if (response.status === _util__WEBPACK_IMPORTED_MODULE_0__["UNPROCESSABLE_ENTITY"]) {
+                context.commit('setLoginErrorMessages', response.data.errors);
+              } else {
+                context.commit('error/setCode', response.status, {
+                  root: true
+                });
+              }
 
             case 10:
             case "end":
