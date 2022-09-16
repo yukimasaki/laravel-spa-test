@@ -17,4 +17,4 @@ Route::get('/user', fn() => Auth::user())->name('user');
 // モデル関係
 //////////////////////////////////////////////////////////
 // License
-Route::resource('/licenses', App\Http\Controllers\LicenseController::class);
+Route::resource('/licenses', 'LicenseController');
